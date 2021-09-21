@@ -1,10 +1,6 @@
-# Flutter Button Animation, Application Design
+# Flutter Button Animation, Application Design - Day 7
 
-Flutter Download Bar Button Animation, Application UI/UX design - day 6 Flutter Animation and UI Design.
-
-This repository is a part of the 100-day design in Flutter.
-
-In this video we use, Flutter Animation, AnimationController, Scale, Fade, Opacity and so on in the one-speed video.
+Let's see how we can animate a button in Flutter.
 
 [Youtube Video](https://youtu.be/WsbMf9IiWGo)
 
