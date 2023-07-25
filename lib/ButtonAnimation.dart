@@ -46,7 +46,7 @@ class _ButtonAnimationState extends State<ButtonAnimation> with TickerProviderSt
     );
 
     _fadeAnimation = Tween<double>(
-      begin: 50.0,
+      begin: 1.0,
       end: 0.0,
     ).animate(_fadeAnimationController);
 
@@ -116,14 +116,19 @@ class _ButtonAnimationState extends State<ButtonAnimation> with TickerProviderSt
                     ),
                     AnimatedBuilder(
                       animation: _fadeAnimationController,
-                      builder: (context, child) => Container(
-                        width: _fadeAnimation.value,
+                      builder: (context, child) => AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        width: _fadeAnimationController.isCompleted || _fadeAnimationController.isCompleted ? 0 : 50,
                         height: 50,
                         decoration: BoxDecoration(
                           color: widget.darkPrimaryColor,
                           borderRadius: BorderRadius.circular(3)
                         ),
-                        child: Icon(Icons.arrow_downward, color: Colors.white,),
+                        child: AnimatedOpacity(
+                          duration: Duration(milliseconds: 500),
+                          opacity: _fadeAnimation.value,
+                          child: Icon(Icons.arrow_downward, color: Colors.white,)),
+                        // child: _fadeAnimationController.isCompleted || _fadeAnimationController.isCompleted ? null : Icon(Icons.arrow_downward, color: Colors.white,),
                       ),
                     )
                   ],
